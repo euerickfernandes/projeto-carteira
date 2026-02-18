@@ -6,7 +6,7 @@ import './css/layout.css';
 
 export const metadata: Metadata = {
   title: "Projeto Carteira",
-  description: "Monitoramento Financeiro",
+  description: "Controle, monitoramento e planejamento de finanças pessoais",
 };
 
 export default function RootLayout({

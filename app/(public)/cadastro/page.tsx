@@ -1,7 +1,10 @@
-import Button from "@/app/ui/Button";
-import Inline from "@/app/ui/Flexbox/Inline";
 import Stack from "@/app/ui/Flexbox/Stack";
-import Link from "next/link";
+import SignUpForm from "./SignUpForm";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Projeto Carteira - Criar Conta",
+};
 
 export default async function Page() {
     console.log('📃 PAGE - CADASTRO');
@@ -10,16 +13,10 @@ export default async function Page() {
         <>
             <Stack>
                 <h1>Criar Conta</h1>
-                <p>Insira seus dados para continuar</p>
+                <p><b>Insira seus dados para continuar</b></p>
             </Stack>
 
-            <Inline>
-                <Button type="submit">Criar Conta</Button>
-
-                <Link href="/login">
-                    <Button type="button" variant="secondary">Voltar</Button>
-                </Link>
-            </Inline>
+            <SignUpForm />
         </>
     );
 }

@@ -1,9 +1,22 @@
 .button {
+    align-items: center;
     background-color: var(--clr-neutral-20);
+    border: none;
+    border-radius: 1rem;
     color: var(--clr-neutral-100);
+    display: flex;
+    font-size: var(--fs-fd);
+    font-weight: var(--fw-md);
+    justify-content: center;
+    padding-block: .75rem;
+    padding-inline: 1.5rem;
+    text-align: center;
+    text-wrap: nowrap;
 
     &.secondary {
         background-color: var(--clr-neutral-85);
         color: var(--clr-neutral-20);
     }
+
+    &.fillWidth { width: 100%; }
 }

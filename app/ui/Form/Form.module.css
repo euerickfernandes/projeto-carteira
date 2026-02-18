@@ -1,0 +1,30 @@
+.form{
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+    a { 
+        font-size: var(--fs-df);
+        font-weight: var(--fw-sb);
+        text-align: center; 
+    }
+}
+
+.input{
+    background-color: var(--clr-neutral-85);
+    border: none;
+    border-radius: .5rem;
+    box-sizing: border-box;
+    color: var(--clr-text);
+    font-size: var(--fs-df);
+    font-weight: var(--fw-md);
+    height: 2.5rem;
+    padding-inline: .75rem;
+    width: 100%;
+}
+
+label:has(+ .input){
+    color: var(--clr-text);
+    font-weight: var(--fw-md);
+}

@@ -12,12 +12,3 @@ body {
 body {
     display: grid;
 }
-
-form {
-    align-items: stretch;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    
-    a { text-align: center; }
-}
