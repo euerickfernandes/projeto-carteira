@@ -1,0 +1,9 @@
+.button {
+    background-color: var(--clr-neutral-20);
+    color: var(--clr-neutral-100);
+
+    &.secondary {
+        background-color: var(--clr-neutral-85);
+        color: var(--clr-neutral-20);
+    }
+}

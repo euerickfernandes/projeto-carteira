@@ -6,62 +6,116 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
-model Account {
-  id        String      @id @default(cuid())
+model FinancialAccount {
+  id String @id @default(cuid())
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  creditCards CreditCard[]
-  transactions Transaction[]
-  
+  destinationTransactions FinancialTransaction[] @relation("DestinationAccount")
+  sourceTransactions      FinancialTransaction[] @relation("SourceAccount")
+
+  user   User   @relation(fields: [userId], references: [id])
+  userId String
+
+  closesAt  Int?
+  expiresAt Int?
+  limit     Decimal?
   name      String
 }
 
-model CreditCard {
-  id        String      @id @default(cuid())
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  account   Account @relation(fields: [accountId], references: [id])
-  accountId String
-  transactions Transaction[]
-
-  closesAt Int
-  expiresAt    Int
-  limit     Decimal
+enum TransactionType {
+  INCOME
+  EXPENSE
+  TRANSFER
 }
 
-model Transaction {
-  id        String      @id @default(cuid())
+model FinancialTransaction {
+  id String @id @default(cuid())
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  account   Account @relation(fields: [accountId], references: [id])
-  accountId String
-  creditCard CreditCard? @relation(fields: [creditCardId], references: [id])
-  creditCardId String?
-  transactionCategory TransactionCategory @relation(fields: [transactionCategoryId], references: [id])
-  transactionCategoryId String
+  category   FinancialTransactionCategory @relation(fields: [categoryId], references: [id])
+  categoryId String
 
-  ammount    Decimal
-  date      DateTime
-  description String
+  destinationAccount   FinancialAccount? @relation("DestinationAccount", fields: [destinationAccountId], references: [id])
+  destinationAccountId String?
+
+  goal   Goal?   @relation(fields: [goalId], references: [id])
+  goalId String?
+
+  investiment   Investiment? @relation(fields: [investimentId], references: [id])
+  investimentId String?
+
+  sourceAccount   FinancialAccount? @relation("SourceAccount", fields: [sourceAccountId], references: [id])
+  sourceAccountId String?
+
+  amount      Decimal
+  description String?
+  occurredAt  DateTime?
+  type        TransactionType
 }
 
-model TransactionCategory {
-  id        String      @id @default(cuid())
+model FinancialTransactionCategory {
+  id String @id @default(cuid())
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  transactions Transaction[]
+  transactions FinancialTransaction[]
 
-  name      String
+  name String
+}
+
+model Goal {
+  id String @id @default(cuid())
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  transactions FinancialTransaction[]
+
+  user   User   @relation(fields: [userId], references: [id])
+  userId String
+
+  initialAmount Decimal
+  goalAmount    Decimal
+  name          String
+}
+
+model Investiment {
+  id String @id @default(cuid())
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  transactions FinancialTransaction[]
+
+  user   User   @relation(fields: [userId], references: [id])
+  userId String
+
+  name     String
+  netValue Decimal
+  taxValue Decimal
+}
+
+model User {
+  id String @id @default(cuid())
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  accounts     FinancialAccount[]
+  goals        Goal[]
+  investiments Investiment[]
+
+  email    String
+  lastname String
+  name     String
+  password String
 }

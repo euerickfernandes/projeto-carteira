@@ -6,28 +6,6 @@ const prisma = new PrismaClient();
 async function main() {
   console.log("🔼 PRISMA SEED");
 
-  await prisma.account.createMany({
-    data: [
-      { name: "Conta Corrente" },
-      { name: "Poupança" },
-    ],
-  });
-
-  await prisma.transactionCategory.createMany({
-    data: [
-        { name: "Alimentação" },
-        { name: "Assinaturas" },
-        { name: "Compras" },
-        { name: "Educação" },
-        { name: "Ferramentas" },
-        { name: "Pagamentos" },
-        { name: "Pet" },
-        { name: "Presentes" },
-        { name: "Saúde" },
-        { name: "Transporte" },
-    ]
-  });
-
   console.log("✅ PRISMA SEED SUCCESS");
 }
 

@@ -1,0 +1,9 @@
+body:has(.main){
+    align-items: center;
+}
+
+.main{
+    display: grid;
+    padding-block: 4rem;
+    padding-inline: 1rem;
+}

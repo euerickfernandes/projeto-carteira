@@ -1,0 +1,16 @@
+:root {
+    --clr-neutral-100: hsl(0 0% 100%);
+    --clr-neutral-95: hsl(0 0% 95%);
+    --clr-neutral-85: hsl(0 0% 85%);
+    --clr-neutral-40: hsl(0 0% 40%);
+    --clr-neutral-20: hsl(0 0% 20%);
+
+    --clr-bg: var(var(--clr-neutral-95));
+    --clr-text: var(var(--clr-neutral-95));
+}
+
+
+body {
+    background-color: var(--clr-bg);
+    color: var(--clr-text);
+}

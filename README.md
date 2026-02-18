@@ -1,25 +1,16 @@
 # 💰 Projeto Carteira
 
-Um aplicativo web para monitoramento de finanças pessoais.  
+> Aplicativo Web para controle, monitoramento e planejamento de finanças pessoais.  
 
-## 📦 Sobre o Projeto
 
-Este projeto é um MVP (Produto Mínimo Viável) voltado ao controle financeiro pessoal.  
+<img alt="Next" src="https://img.shields.io/badge/Next.js-000?logo=nextdotjs&logoColor=fff&style=for-the-badge">
+<img alt="React" src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
+<img alt="CSS" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
 
----
 
 ## 🚀 Funcionalidades
 
-- 🔄️ Cadastro de **contas**
-- 🔄️ Registro de **receitas** e **despesas**
-- 🔄️ Visualização de **saldos** por conta
-- 🔄️ Painel com **lista de transações**
-
----
-
-## 🛠️ Tecnologias Utilizadas
-
-- [Next.js](https://nextjs.org/)
-- [Prisma](https://www.prisma.io/)
-- [PostgreSQL](https://www.postgresql.org/)
-- [TypeScript](https://www.typescriptlang.org/)
+- 🔄️ Gestão de **Contas e Cartões de Créditos**
+- 🔄️ Registro de **Receitas** e **Despesas**
+- 🔄️ Controle de **Investimentos**
+- 🔄️ Acompanhamento de **Objetivos Financeiros**

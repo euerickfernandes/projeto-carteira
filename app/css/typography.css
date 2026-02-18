@@ -1,0 +1,18 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+:root {
+    --fs-sm: .75rem;
+    --fs-df: .875rem;
+    --fs-md: 1rem;
+    --fs-lg: 1.25rem;
+
+    --fw-rg: 400;
+    --fw-md: 500;
+    --fw-sb: 600;
+}
+
+body,
+body * {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: var(--fs-df);
+}
