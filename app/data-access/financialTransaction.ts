@@ -1,33 +1,27 @@
 import { Prisma } from "@prisma/client";
 import prisma from "../lib/prisma";
 
-export async function createTransaction(transaction: Prisma.TransactionCreateInput) {
-    console.log('💾 DAL CREATE TRANSACTION');
+export async function createFinancialTransaction(financialTransaction: Prisma.FinancialTransactionCreateInput) {
+    console.log('💾 DAL CREATE FINANCIAL TRANSACTION');
 
-    return await prisma.transaction.create({
-        data: transaction
+    return await prisma.financialTransaction.create({
+        data: financialTransaction
     });
 }
 
-export async function getTransactionsAmmountSumByAccountId(accountId: string){
-    console.log('💾 DAL GET TRANSACTIONS AMMOUNT SUM BY ACCOUNT ID');
 
-    return await prisma.transaction.aggregate({
-        _sum: { ammount: true },
-        where: { accountId: accountId }
-    });
-}
+export async function getFinancialTransactions() {
+    console.log('💾 DAL GET FINANCIAL TRANSACTIONS');
 
-export async function getTransactions() {
-    console.log('💾 DAL GET TRANSACTIONS');
-
-    return await prisma.transaction.findMany({
+    return await prisma.financialTransaction.findMany({
         include: {
-            account: true,
-            creditCard: true,
-            transactionCategory: true,
+            destinationAccount: true,
+            sourceAccount: true,
+            category: true,
+            goal: true,
+            investiment: true,
         },
 
-        orderBy: [{ date: 'desc' }, { createdAt: 'desc' }]
+        orderBy: [{ createdAt: 'desc' }]
     });
 }

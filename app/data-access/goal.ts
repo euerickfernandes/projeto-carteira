@@ -1,16 +1,16 @@
 import { Prisma } from "@prisma/client";
 import prisma from "../lib/prisma";
 
-export async function getTransactionCategory(id: string){
-    return await prisma.transactionCategory.findFirst({ where: { id: id } });
+export async function getGoal(id: string){
+    return await prisma.goal.findFirst({ where: { id: id } });
 }
 
-export async function getTransactionCategorys(){
-    return await prisma.transactionCategory.findMany({});
+export async function getGoals(){
+    return await prisma.goal.findMany({});
 }
 
-export async function createTransactionCategory(transactionCategory: Prisma.TransactionCategoryCreateInput){
-    return await prisma.transactionCategory.create({
-        data: transactionCategory
+export async function createGoal(goal: Prisma.GoalCreateInput){
+    return await prisma.goal.create({
+        data: goal
     });
 }
