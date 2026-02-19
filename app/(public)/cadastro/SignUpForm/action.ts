@@ -24,6 +24,6 @@ export async function createUserAction(previousState: any, formData: FormData){
 
     console.log(user.firstname);
 
-    // revalidatePath('/');
+    revalidatePath('/');
     redirect(`/`);
 }
