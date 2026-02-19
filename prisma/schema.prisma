@@ -70,6 +70,9 @@ model FinancialTransactionCategory {
 
   transactions FinancialTransaction[]
 
+  user   User   @relation(fields: [userId], references: [id])
+  userId String
+
   name String
 }
 
@@ -112,10 +115,11 @@ model User {
   updatedAt DateTime @updatedAt
 
   accounts     FinancialAccount[]
+  categories     FinancialTransactionCategory[]
   goals        Goal[]
   investiments Investiment[]
 
-  email    String
+  email    String @unique
   lastname String
   firstname     String
   password String

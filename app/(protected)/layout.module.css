@@ -1,9 +1,19 @@
-body:has(.main){
-    align-items: center;
-}
-
-.main{
-    display: grid;
-    padding-block: 4rem;
+.main {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--fs-df);
+    gap: var(--space-lg);
+    padding-block: 2rem;
     padding-inline: 1rem;
+
+    h1{
+        font-size: var(--fs-lg);
+        /* font-weight: var(--fw-sb); */
+    }
+
+    /* p{
+        color: var(--clr-text-light);
+        font-size: var(--fs-md);
+        line-height: 150%;
+    } */
 }

@@ -1,0 +1,18 @@
+.navbar{
+    background-color: var(--clr-neutral-100);
+    bottom: 0;
+    box-sizing: border-box;
+    display: grid;
+    
+    grid-template-columns: repeat(4, 1fr);
+    height: var(--navbar-height);
+    padding-block: .75rem;
+    padding-inline: 1.5rem;
+    position: fixed;
+    width: 100%;
+
+    body:has(&){ 
+        --navbar-height: 4.5rem;
+        main{ padding-bottom: calc(var(--navbar-height) + 2rem); }
+    }
+}

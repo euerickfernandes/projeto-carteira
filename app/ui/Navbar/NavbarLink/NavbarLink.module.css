@@ -1,0 +1,11 @@
+.navbarLink{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: var(--fs-sm);
+    gap: .25rem;
+    justify-content: center;
+    text-align: center;
+
+    &.active{ font-weight: var(--fw-sb); }
+}

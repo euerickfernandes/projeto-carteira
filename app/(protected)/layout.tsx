@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styles from './layout.module.css';
+import Navbar from '../ui/Navbar';
 
 export default function Layout({
   children,
@@ -13,13 +14,15 @@ export default function Layout({
       <main className={ styles.main }>
         { children }
       </main>
-
+{/* 
       <nav>
         <Link href="/dashboard">Dashboard</Link>
         <Link href="/transacoes">Transações</Link>
         <Link href="/investimentos">Investimentos</Link>
         <Link href="/objetivos">Objetivos</Link>
-      </nav>
+      </nav> */}
+
+      <Navbar />
     </>
   );
 }
