@@ -5,7 +5,7 @@
     border-radius: 1rem;
     color: var(--clr-neutral-100);
     display: flex;
-    font-size: var(--fs-fd);
+    font-size: var(--fs-df);
     font-weight: var(--fw-md);
     justify-content: center;
     padding-block: .75rem;
@@ -17,6 +17,8 @@
         background-color: var(--clr-neutral-85);
         color: var(--clr-neutral-20);
     }
+
+    &:disabled{ opacity: 25%; }
 
     &.fillWidth { width: 100%; }
 }

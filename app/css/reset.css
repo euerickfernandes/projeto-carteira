@@ -45,3 +45,8 @@ a{
 	color: inherit;
 	text-decoration: none;
 }
+button{
+	cursor: pointer;
+	padding-block: 0;
+	padding-inline: 0;
+}

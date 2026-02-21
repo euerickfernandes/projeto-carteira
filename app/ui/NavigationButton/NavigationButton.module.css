@@ -1,0 +1,11 @@
+.navigationButton{
+    aspect-ratio: 1;
+    background-color: var(--clr-neutral-85);
+    background-image: url('../../../public/icons/arrow_left.svg');
+    background-position: center;
+    border: none;
+    border-radius: .5rem;
+    display: block;
+    width: 1.5rem;
+    padding: 0;
+}

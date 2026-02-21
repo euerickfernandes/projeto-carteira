@@ -8,7 +8,12 @@
 
     h1{
         font-size: var(--fs-lg);
-        /* font-weight: var(--fw-sb); */
+        font-weight: var(--fw-rg);
+    }
+    
+    h2{
+        font-size: var(--fs-df);
+        font-weight: var(--fw-rg);
     }
 
     /* p{

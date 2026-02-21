@@ -1,13 +1,12 @@
 import styles from '../Form.module.css';
 
-type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
+export type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
 
-export default function Input({ ...rest }: InputProps){
+export default function Input({ ...props }: InputProps){
     return (
         <input 
             className={ styles.input }
-            type="text" 
-            { ...rest } 
+            { ...props } 
         />
     );
 }

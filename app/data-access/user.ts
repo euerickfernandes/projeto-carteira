@@ -7,8 +7,14 @@ export async function createUser(user: Prisma.UserCreateInput): Promise<User> {
     return prisma.user.create({ data: user });
 }
 
+export async function getUsers(): Promise<User[]> {
+    console.log('💿 DAL - GET USERS');
+
+    return await prisma.user.findMany();
+}
+
 export async function getUserCount(): Promise<number> {
-    console.log('💿 DAL - GET USER COUNT');
+    console.log('💿 DAL - GET USERS COUNT');
 
     return await prisma.user.count();
 }

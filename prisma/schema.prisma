@@ -26,6 +26,7 @@ model FinancialAccount {
 
   closesAt  Int?
   expiresAt Int?
+  initialAmount Decimal
   limit     Decimal?
   name      String
 }

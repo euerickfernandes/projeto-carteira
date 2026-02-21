@@ -2,7 +2,7 @@ import NextForm from "next/form";
 import { FormHTMLAttributes } from "react";
 import styles from './Form.module.css';
 
-type FormProps = FormHTMLAttributes<HTMLFormElement> & {
+export type FormProps = FormHTMLAttributes<HTMLFormElement> & {
     action: NonNullable<string | ((formData: FormData) => void | Promise<void>) | undefined>;
     children: React.ReactNode
 } 

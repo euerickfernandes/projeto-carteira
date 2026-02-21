@@ -1,4 +1,4 @@
 export default function Page() {
-    console.log('📃 PAGE - CONTAS');
+    console.log('📃 PAGE - CARTAO');
     return <h1>Contas</h1>;
 }

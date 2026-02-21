@@ -3,7 +3,7 @@ import SignUpForm from "./SignUpForm";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Projeto Carteira - Criar Conta",
+    title: "Criar Conta",
 };
 
 export default async function Page() {

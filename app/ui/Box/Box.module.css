@@ -1,0 +1,10 @@
+.box{
+    background-color: var(--clr-neutral-95);
+    border-radius: 1rem;
+    box-sizing: border-box;
+    padding: 1rem;
+
+    &.light{
+        background-color: var(--clr-neutral-100);
+    }
+}
