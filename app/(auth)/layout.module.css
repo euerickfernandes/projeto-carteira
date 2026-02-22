@@ -15,10 +15,4 @@
         font-size: var(--fs-df);
         font-weight: var(--fw-rg);
     }
-
-    /* p{
-        color: var(--clr-text-light);
-        font-size: var(--fs-md);
-        line-height: 150%;
-    } */
 }

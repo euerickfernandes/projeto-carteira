@@ -1,0 +1,8 @@
+.sm{ font-size: var(--fs-sm); }
+.df{ font-size: var(--fs-df); }
+.md{ font-size: var(--fs-md); }
+.lg{ font-size: var(--fs-lg); }
+
+.regular{ font-weight: var(--fw-rg); }
+.medium{ font-weight: var(--fw-md); }
+.semiBold{ font-weight: var(--fw-sb); }
