@@ -9,13 +9,19 @@ export type FormProps = FormHTMLAttributes<HTMLFormElement> & {
 
 export default function Form({
     action,
+    className,
     children,
     ...rest
 }: FormProps) {
+  const formClassName = `
+    ${className}
+    ${styles.form}
+  `;
+
   return (
     <NextForm 
         action={ action } 
-        className={ styles.form } 
+        className={ formClassName } 
         { ...rest }
     >
         { children }

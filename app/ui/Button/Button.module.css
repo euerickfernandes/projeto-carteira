@@ -7,6 +7,7 @@
     display: flex;
     font-size: var(--fs-df);
     font-weight: var(--fw-md);
+    gap: .25rem;
     justify-content: center;
     padding-block: .75rem;
     padding-inline: 1.5rem;
@@ -21,4 +22,13 @@
     &:disabled{ opacity: 25%; }
 
     &.fillWidth { width: 100%; }
+
+    &.icon::before{
+        aspect-ratio: 1;
+        content: '';
+        display: block;
+        width: 1rem;
+    }
+
+    &.logout::before{ background-image: url('../../../public/icons/logout.svg'); }
 }

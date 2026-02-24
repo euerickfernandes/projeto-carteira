@@ -5,17 +5,30 @@
     box-sizing: border-box;
     display: flex;
     gap: .25rem;
+    interpolate-size: allow-keywords;
     justify-content: center;
     padding-block: .5rem;
     padding-inline: 1rem;
+    transition: .3s;
+    transition-property: background-color, width;
     width: fit-content;
+
+    &.fillWidth{ width: 100%; }
 
     &:has(input:checked) {
         background-color: var(--clr-neutral-20);
         color: var(--clr-neutral-100);
     }
-
-    &.fillWidth{ width: 100%; }
-
+    
+    &.icon::before{
+        aspect-ratio: 1;
+        content: '';
+        display: block;
+        width: 1rem;
+    }
+    
+    &.add::before{ background-image: url('../../../../public/icons/add.svg'); }
+    &:has(input:checked).add::before{ background-image: url('../../../../public/icons/add_white.svg'); }
+    
     input{ display: none; }
 }

@@ -2,7 +2,7 @@ import Inline from "@/app/ui/Flexbox/Inline";
 import NavigationButton from "@/app/ui/NavigationButton";
 import CreateAccountForm from "./components/CreateAccountForm";
 import AccountList from "./components/AccountsList";
-import AccountSummary from "./components/AccountsSummary";
+import AccountsSummary from "./components/AccountsSummary";
 
 export default function Page() {
     console.log('📃 PAGE - CONTAS');
@@ -14,7 +14,7 @@ export default function Page() {
                 <h1>Contas</h1>
             </Inline>
 
-            <AccountSummary />
+            <AccountsSummary />
             <AccountList />
             <CreateAccountForm />
         </>

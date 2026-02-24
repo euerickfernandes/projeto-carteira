@@ -23,6 +23,8 @@ export default function ToggleInput({
         ${styles.toggleInput}
         ${fillWidth ? styles.fillWidth : ''} 
         ${fitContent ? styles.fitContent : ''} 
+        ${icon ? styles.icon : ''} 
+        ${icon ? styles[icon] : ''} 
     `;
 
     return (

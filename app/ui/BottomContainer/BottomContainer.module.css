@@ -11,5 +11,9 @@
     padding-block: .75rem;
     padding-inline: 1rem;
     position: fixed;
-    width: 100%;
+    right: 0;
+
+    body:has(&){
+        main { padding-bottom: 6rem; }
+    }
 }

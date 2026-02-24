@@ -13,9 +13,7 @@ export async function createAccountAction(previousState: any, formData: FormData
     const initialAmount = formData.get('initialAmount') as string;
     const name = formData.get('name') as string;
 
-    console.log(initialAmount, name);
-
-    const randomIndex = randomInt(await getUserCount());
+    const randomIndex = randomInt(0, await getUserCount());
     const user = (await getUsers())[randomIndex];
 
     await createFinancialAccount({
@@ -25,5 +23,6 @@ export async function createAccountAction(previousState: any, formData: FormData
     });
 
     revalidatePath('/contas');
-    revalidatePath('/');
+
+    return { success: true }
 }

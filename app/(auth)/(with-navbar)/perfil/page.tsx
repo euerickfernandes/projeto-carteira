@@ -9,7 +9,13 @@ export default function Page() {
             <h1>Perfil</h1>
 
             <Link href="/login">
-                <Button fillWidth variant="secondary">Sair</Button>
+                <Button 
+                    fillWidth 
+                    icon="logout"
+                    variant="secondary"
+                >
+                    Sair
+                </Button>
             </Link>
         </>
     );

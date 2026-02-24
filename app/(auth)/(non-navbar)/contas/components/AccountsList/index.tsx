@@ -11,7 +11,7 @@ export default async function AccountsList() {
         <List>
             {accounts ? accounts.map((account) =>(
                 <li key={ account.id }>
-                    <Link href="#">
+                    <Link href={`/contas/${account.id}`}>
                         <Box align="center" justify="between">
                             <h2><b>{ account.name }</b></h2>
                             <p>{ numberToCurrency(account.initialAmount) }</p>

@@ -20,6 +20,7 @@ export default function Button({
         ${styles.button}
         ${fillWidth ? styles.fillWidth : ''} 
         ${fitContent ? styles.fitContent : ''} 
+        ${icon ? styles.icon : ''} 
         ${icon ? styles[icon] : ''} 
         ${variant ? styles[variant] : ''}
     `;

@@ -11,6 +11,11 @@
     }
 }
 
+label:has(+ .input){
+    color: var(--clr-text);
+    font-weight: var(--fw-md);
+}
+
 .input{
     background-color: var(--clr-neutral-85);
     border: none;
@@ -22,9 +27,12 @@
     height: 2.5rem;
     padding-inline: .75rem;
     width: 100%;
-}
 
-label:has(+ .input){
-    color: var(--clr-text);
-    font-weight: var(--fw-md);
+    &.currency{
+        background-color: transparent;
+        height: auto;
+        font-size: var(--fs-lg);
+        font-weight: var(--fw-sb);
+        padding: 0;
+    }
 }

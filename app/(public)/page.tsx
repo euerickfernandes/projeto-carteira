@@ -1,11 +1,13 @@
 import Link from "next/link";
 import Stack from "../ui/Flexbox/Stack";
 import { getUserCount } from "../data-access/user";
+import { getFinancialAccountsCount } from "../data-access/financialAccount";
 
 export default async function Page() {
     console.log('📃 PAGE - HOME');
 
-    const userCount = await getUserCount();
+    const usersCount = await getUserCount();
+    const accountsCount = await getFinancialAccountsCount();
 
     return (
         <>  
@@ -16,7 +18,8 @@ export default async function Page() {
 
             <Stack>
                 <h2>Projeto em construção</h2>
-                <p>Usuários: <b>{ userCount }</b></p>
+                <p>Usuários: <b>{ usersCount }</b></p>
+                <p>Contas bancárias: <b>{ accountsCount.toString() }</b></p>
             </Stack>
         
             <Stack gap="md">

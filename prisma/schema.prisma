@@ -59,8 +59,8 @@ model FinancialTransaction {
   sourceAccountId String?
 
   amount      Decimal
-  description String?
-  occurredAt  DateTime?
+  description String
+  paidAt  DateTime?
   type        TransactionType
 }
 

@@ -1,23 +1,32 @@
+import { getFinancialAccountsTotalBalance } from '@/app/data-access/financialAccount';
+import { getUserCount, getUsers } from '@/app/data-access/user';
+import { numberToCurrency } from '@/app/lib/format';
 import Inline from '@/app/ui/Flexbox/Inline';
 import Stack from '@/app/ui/Flexbox/Stack';
-import NavigationButton from '@/app/ui/NavigationButton';
 import Text from '@/app/ui/Text';
+import { Decimal } from '@prisma/client/runtime/library';
+import { randomInt } from 'crypto';
 import React from 'react'
 
-export default function AccountSummary() {
+export default async function AccountsSummary() {
+  const randomIndex = randomInt(0, await getUserCount());
+  const user = (await getUsers())[randomIndex];
+
+  const accountsTotalBalance = await getFinancialAccountsTotalBalance(user.id);
+  
   return (
     <Inline justify="between">
         <Stack>
-            <label htmlFor="accountBalance">Saldo em conta</label>
+            <label htmlFor="accountsTotalBalance">Saldo em conta</label>
             
-            <output id="accountBalance">
-                <Text as="span" size="lg">R$ 10.000.000,00</Text>
+            <output id="accountsTotalBalance">
+                <Text as="span" size="lg">{ numberToCurrency(accountsTotalBalance as Decimal) }</Text>
             </output>
         </Stack>
 
         <Stack>
             <label htmlFor="projectedBalance">Previsto até 30/03</label>
-            <output id="projectedBalance">R$ 10.000.000,00</output>
+            <output id="projectedBalance">{ numberToCurrency(accountsTotalBalance as Decimal) }</output>
         </Stack>
     </Inline>
   );
