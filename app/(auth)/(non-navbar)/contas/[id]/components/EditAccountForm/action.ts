@@ -18,4 +18,5 @@ export async function createAccountAction(previousState: any, formData: FormData
     });
 
     revalidatePath(`/contas/${acccountId}`);
+    revalidatePath(`/contas`);
 }

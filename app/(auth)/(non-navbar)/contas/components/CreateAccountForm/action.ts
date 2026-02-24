@@ -23,6 +23,7 @@ export async function createAccountAction(previousState: any, formData: FormData
     });
 
     revalidatePath('/contas');
+    revalidatePath('/');
 
     return { success: true }
 }
