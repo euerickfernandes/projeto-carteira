@@ -1,8 +1,9 @@
 import Inline from "@/app/ui/Flexbox/Inline";
 import NavigationButton from "@/app/ui/NavigationButton";
 import { getFinancialAccount } from "@/app/data-access/financialAccount";
-import AccountSummary from "./components/AccountSummary";
 import EditAccountForm from "./components/EditAccountForm";
+import AccountFormFields from "../components/AccountFormFields";
+import AccountsSummary from "../components/AccountsSummary";
 
 export default async function Page({
     params
@@ -25,13 +26,11 @@ export default async function Page({
                 <h1>{ account?.name }</h1>
             </Inline>
 
-            <AccountSummary accountId={ account?.id as string } />
+            <AccountsSummary id={ account?.id as string } />
             
-            <EditAccountForm 
-                id={ account.id }  
-                initialAmount={ Number(account.initialAmount) }
-                name={ account.name }
-            />
+            <EditAccountForm>
+                <AccountFormFields id={ account.id } />
+            </EditAccountForm>
         </>
     );
 }

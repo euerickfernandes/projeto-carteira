@@ -4,11 +4,11 @@ import Button from "@/app/ui/Button";
 import Stack from "@/app/ui/Flexbox/Stack";
 import Input from "@/app/ui/Form/Input";
 import ToggleInput from "@/app/ui/Form/ToggleInput";
-import { useActionState, useState } from "react";
+import React, { useActionState, useState } from "react";
 import { createAccountAction } from "./action";
 import BottomForm from "@/app/ui/BottomForm";
 
-export default function CreateAccountForm() {
+export default function CreateAccountForm({ children }: { children: React.ReactNode }) {
   const [state, action, isPending] = useActionState(createAccountAction, null);
   const [open, setOpen] = useState(false);
 
@@ -27,7 +27,9 @@ export default function CreateAccountForm() {
           type="checkbox"
       />
 
-      <Stack>
+      { children }
+
+      {/* <Stack>
         <label htmlFor="initialAmount">Saldo inicial</label>
           <Input 
             defaultValue="R$ 0,00" 
@@ -53,15 +55,15 @@ export default function CreateAccountForm() {
             required
             type="text" 
         />
-      </Stack>
+      </Stack>*/}
 
       <Button 
         disabled={ isPending } 
         fitContent
         fillWidth
       >
-        { isPending ? 'Salvando Conta' : 'Salvar Conta' }
-      </Button>
+        { isPending ? 'Salvando Conta...' : 'Salvar Conta' }
+      </Button> 
     </BottomForm>
   )
 }

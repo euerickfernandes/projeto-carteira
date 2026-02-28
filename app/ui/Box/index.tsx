@@ -6,7 +6,7 @@ type BoxProps = FlexboxProps & { lightBackground?: true }
 export default function Box({ lightBackground , ...props }: BoxProps){
     const className = `
         ${ styles.box }
-        ${ lightBackground ? styles.light : null }
+        ${ lightBackground ? styles.light : '' }
     `;
 
     return (

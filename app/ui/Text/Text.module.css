@@ -6,3 +6,7 @@
 .regular{ font-weight: var(--fw-rg); }
 .medium{ font-weight: var(--fw-md); }
 .semiBold{ font-weight: var(--fw-sb); }
+
+.left{ text-align: left; }
+.right{ text-align: right; }
+.center{ text-align: center; }

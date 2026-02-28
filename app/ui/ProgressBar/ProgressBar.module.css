@@ -1,0 +1,11 @@
+.progressBar{
+    background-color: var(--clr-neutral-90);
+    border-radius: 100vw;
+    height: .5rem;
+    overflow: hidden;
+}
+
+.progressValue{
+    background-color: var(--clr-neutral-40);
+    height: 100%;
+}

@@ -1,22 +1,25 @@
 import { Prisma } from "@prisma/client";
 import prisma from "../lib/prisma";
 
-export async function createFinancialAccount(financialAccount: Prisma.FinancialAccountCreateInput){
+export async function createFinancialAccount(data: Prisma.FinancialAccountCreateInput){
     console.log('💾 DAL CREATE FINANCIAL ACCOUNT');
 
-    return await prisma.financialAccount.create({ data: financialAccount });
+    return await prisma.financialAccount.create({ data: data });
 }
 
-export async function getFinancialAccount(financialAccountId: string){
+export async function getFinancialAccount(id: string){
     console.log('💾 DAL GET FINANCIAL ACCOUNT');
 
-    return await prisma.financialAccount.findUnique({ where: { id: financialAccountId } });
+    return await prisma.financialAccount.findUnique({ where: { id: id } });
 }
 
 export async function getFinancialAccounts(){
     console.log('💾 DAL GET FINANCIAL ACCOUNTS');
 
-    return await prisma.financialAccount.findMany({ orderBy: { name: 'asc' } });
+    return await prisma.financialAccount.findMany({ 
+        orderBy: { name: 'asc' },
+        where: { limit: null }
+    });
 }
 
 export async function getFinancialAccountsCount(){

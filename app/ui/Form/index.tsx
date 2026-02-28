@@ -14,7 +14,7 @@ export default function Form({
     ...rest
 }: FormProps) {
   const formClassName = `
-    ${className}
+    ${className || ''}
     ${styles.form}
   `;
 

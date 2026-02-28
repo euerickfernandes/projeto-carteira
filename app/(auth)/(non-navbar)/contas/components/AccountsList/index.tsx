@@ -2,6 +2,7 @@ import { getFinancialAccounts } from "@/app/data-access/financialAccount";
 import { numberToCurrency } from "@/app/lib/format";
 import Box from "@/app/ui/Box";
 import List from "@/app/ui/List";
+import Text from "@/app/ui/Text";
 import Link from "next/link";
 
 export default async function AccountsList() {
@@ -9,6 +10,8 @@ export default async function AccountsList() {
 
     return (
         <List>
+            <li><Text weight="semiBold">{ accounts.length } Conta{ accounts.length > 1 ? 's' : '' }</Text></li>
+
             {accounts ? accounts.map((account) =>(
                 <li key={ account.id }>
                     <Link href={`/contas/${account.id}`}>

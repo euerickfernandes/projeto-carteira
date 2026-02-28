@@ -2,7 +2,10 @@
     display: flex;
 
     &.row { flex-direction: row; }
-    &.column { flex-direction: column; }
+    &.column { 
+        flex-direction: column; 
+        width: 100%;
+    }
 
     &.align-start { align-items: flex-start; }
     &.align-center { align-items: center; }

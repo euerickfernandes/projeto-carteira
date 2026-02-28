@@ -24,6 +24,7 @@ export default function Button({
         ${icon ? styles[icon] : ''} 
         ${variant ? styles[variant] : ''}
     `;
+
     return (
         <button className={ className } { ...props }>
             { children }

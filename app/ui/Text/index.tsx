@@ -2,6 +2,7 @@ import styles from './Text.module.css';
 import { JSX } from 'react';
 
 type TextProps = {
+    align?: 'center' | 'left' | 'right'
     as?: keyof JSX.IntrinsicElements
     children: React.ReactNode
     className?: string 
@@ -10,6 +11,7 @@ type TextProps = {
 }
 
 export default function Text({
+    align = 'left',
     as: Component = 'p',
     children,
     className,
@@ -18,8 +20,10 @@ export default function Text({
 }: TextProps){
     const textClassName = `
         ${ className ? styles.className : '' }
+        ${styles[align]}
         ${styles[size]}
         ${styles[weight]}
     `;
+    
     return <Component className={ textClassName }>{ children }</Component>
 }

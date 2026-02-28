@@ -1,3 +1,5 @@
+'use client';
+
 import { currencyMask } from '@/app/lib/mask';
 import styles from '../Form.module.css';
 
@@ -30,8 +32,7 @@ export default function Input({
 
 class Mask{
     static currency(className: string, props: InputProps) {
-        'use client'
-
+        
         const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
             currencyMask(event);
         }

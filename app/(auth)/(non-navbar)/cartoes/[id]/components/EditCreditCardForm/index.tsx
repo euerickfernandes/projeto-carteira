@@ -5,22 +5,20 @@ import Stack from "@/app/ui/Flexbox/Stack";
 import Form from "@/app/ui/Form";
 import Input from "@/app/ui/Form/Input";
 import { useActionState, useState } from "react";
-import { editAccountAction } from "./action";
+import { editCreditCardAction } from "./action";
 import Box from "@/app/ui/Box";
 import { Prisma } from "@prisma/client";
 import { numberToCurrency } from "@/app/lib/format";
 import { Decimal } from "@prisma/client/runtime/library";
 
 export default function EditAccountForm({ children }: { children: React.ReactNode }) {
-  const [state, action, isPending] = useActionState(editAccountAction, null);
+  const [state, action, isPending] = useActionState(editCreditCardAction, null);
 
   return (
     <Box>
       <Form action={ action }>
         { children }
-        {/* <input name="accountId" type="hidden" defaultValue={ id as string }/>
-
-        <Stack>
+        {/* <Stack>
           <label htmlFor="initialAmount">Saldo inicial</label>
             <Input 
               defaultValue={ numberToCurrency(initialAmount as Decimal) } 
@@ -47,14 +45,15 @@ export default function EditAccountForm({ children }: { children: React.ReactNod
           />
         </Stack>*/}
 
+
         <Button 
           disabled={ isPending } 
           fillWidth
         >
           { isPending ? 'Salvando alterações...' : 'Salvar alterações' }
-        </Button>
+        </Button> 
 
-        <a href="#">Apagar Conta</a> 
+        <a href="#">Apagar Cartão</a>
       </Form>
     </Box>
   )
