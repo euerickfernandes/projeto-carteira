@@ -11,4 +11,6 @@ body {
 
 body {
     display: grid;
+
+    --navbar-height: 0rem;
 }

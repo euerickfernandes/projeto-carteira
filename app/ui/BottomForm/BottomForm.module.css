@@ -1,6 +1,6 @@
 .bottomForm{
     background-color: var(--clr-neutral-100);
-    bottom: 0;
+    bottom: var(--navbar-height);
     box-sizing: border-box;
     left: 0;
     padding-block: .75rem;
@@ -11,7 +11,7 @@
     transition-property: transform;
     transform: translateY(calc(100% - 3.5rem));
 
-    body:has(&){ main { padding-bottom: 5rem; } }
+    body:has(&){ main { padding-bottom: calc(var(--navbar-height) + 5rem); } }
 
     :has(> [data-toggle]){ align-self: flex-end; }
 

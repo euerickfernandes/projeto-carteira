@@ -6,6 +6,7 @@ export type FlexboxProps = {
     direction?: "row" | "column"
     gap?: "sm" | "md" | "lg"
     justify?: "start" | "center" | "between" | "around"
+    wrap?: true
 }
 
 export function flexboxClassName(props: Omit<FlexboxProps, 'children'>): string{
@@ -15,6 +16,7 @@ export function flexboxClassName(props: Omit<FlexboxProps, 'children'>): string{
         ${styles[`align-${props.align}`]}
         ${styles[`gap-${props.gap}`]}
         ${styles[`justify-${props.justify}`]}
+        ${props.wrap ? styles.wrap : ''}
     `;
 }
 
@@ -24,8 +26,9 @@ export default function Flexbox({
     direction = 'row',
     gap = 'sm',
     justify = 'start',
+    wrap,
 }: FlexboxProps) {
     return (
-        <div className={ flexboxClassName({ align, direction, gap, justify }) }>{ children }</div>
+        <div className={ flexboxClassName({ align, direction, gap, justify, wrap }) }>{ children }</div>
     )
 }

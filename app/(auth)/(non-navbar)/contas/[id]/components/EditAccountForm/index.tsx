@@ -18,34 +18,6 @@ export default function EditAccountForm({ children }: { children: React.ReactNod
     <Box>
       <Form action={ action }>
         { children }
-        {/* <input name="accountId" type="hidden" defaultValue={ id as string }/>
-
-        <Stack>
-          <label htmlFor="initialAmount">Saldo inicial</label>
-            <Input 
-              defaultValue={ numberToCurrency(initialAmount as Decimal) } 
-              id="initialAmount"
-              inputMode="numeric"
-              name="initialAmount"
-              required
-              type="text" 
-              variant="currency"
-            />
-        </Stack>
-
-        <Stack>
-          <label htmlFor="name">Nome</label>
-
-          <Input 
-              autoComplete="off"
-              defaultValue={ name as string } 
-              id="name"
-              maxLength={ 50 } 
-              name="name"
-              required
-              type="text" 
-          />
-        </Stack>*/}
 
         <Button 
           disabled={ isPending } 

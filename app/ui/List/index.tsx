@@ -1,4 +1,3 @@
-import styles from '@/app/ui/Flexbox/Flexbox.module.css'
 import { flexboxClassName, FlexboxProps } from '../Flexbox';
 
 type ListProps = FlexboxProps;

@@ -1,7 +1,6 @@
 'use server'
 
 import { updateCreditCard } from "@/app/data-access/creditCard";
-import { updateFinancialAccount } from "@/app/data-access/financialAccount";
 import { currencyToNumber } from "@/app/lib/format";
 import { revalidatePath } from "next/cache";
 
@@ -18,7 +17,7 @@ export async function editCreditCardAction(previousState: any, formData: FormDat
     await updateCreditCard(id, {
         closesAt: Number(closesAt),
         expiresAt: Number(expiresAt),
-        limit: limit,
+        limit: currencyToNumber(limit),
         name: name
     });
 

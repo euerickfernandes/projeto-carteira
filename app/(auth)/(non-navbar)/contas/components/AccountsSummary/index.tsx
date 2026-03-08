@@ -22,7 +22,7 @@ export default async function AccountsSummary({ id }: { id?: string }) {
       </Stack>
 
       <Stack>
-        <Text as="h2">Previsto até 30/03</Text>
+        <Text align="right" as="h2">Previsto até 30/03</Text>
         <Text align="right">{numberToCurrency(totalBalance as Decimal)}</Text>
       </Stack>
     </Inline>
